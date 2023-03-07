@@ -11,7 +11,9 @@
       />
     </li>
     <li class="flex-0">
-      <button class="flex-0 flex items-center gap-2 px-4 py-2 bg-primary text-white">
+      <button
+        class="flex-0 flex items-center gap-2 px-4 py-2 bg-primary text-white"
+      >
         <span>Search</span>
       </button>
     </li>
@@ -22,14 +24,19 @@
     class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 my-0"
   >
     <li class="relative" *ngFor="let movie of searchResults">
-      <button (click)="addMovie(movie)" title="Add movie">
-        <app-movie-card>
-          <app-movie-image
-            [src]="movie.poster_path"
-            [alt]="movie.title"
-          ></app-movie-image>
-        </app-movie-card>
-      </button>
+      <app-movie-card>
+        <app-movie-image
+          [src]="movie.poster_path"
+          [alt]="movie.title"
+        ></app-movie-image>
+        <button
+          class="p-2 absolute bottom-0 right-0 bg-white"
+          title="Add to list"
+          (click)="addMovie(movie)"
+        >
+          ❤️
+        </button>
+      </app-movie-card>
     </li>
   </ul>
 </ng-container>

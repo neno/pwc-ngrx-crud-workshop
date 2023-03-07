@@ -1,0 +1,22 @@
+<nav class="flex items-center justify-between border-b border-gray-200">
+  <ul class="flex items-center m-0">
+    <li class="mr-2">
+      <a [routerLink]="'list'" routerLinkActive="tabActive" class="tab" title="List of saved events">
+        Upcoming Events
+      </a>
+    </li>
+    <li class="mr-2">
+      <a [routerLink]="'new'" routerLinkActive="tabActive" class="tab" title="Add Event">
+        ＋
+      </a>
+    </li>
+  </ul>
+  <ul class="flex items-center m-0">
+    <li class="mr-2">
+      <a [routerLink]="'archive'" routerLinkActive="tabActive" class="tab" title="List of saved events">
+        Archive
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

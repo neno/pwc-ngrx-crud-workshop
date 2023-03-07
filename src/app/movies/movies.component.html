@@ -1,12 +1,12 @@
 <nav>
   <ul class="flex flex-wrap border-b border-gray-200">
     <li class="mr-2">
-      <a [routerLink]="'list'" routerLinkActive="tabActive" class="tab">
+      <a [routerLink]="'list'" routerLinkActive="tabActive" class="tab" title="List of saved movies">
         Movies ({{ moviesCount$ | async }})
       </a>
     </li>
     <li class="mr-2">
-      <a [routerLink]="'search'" routerLinkActive="tabActive" class="tab">
+      <a [routerLink]="'search'" routerLinkActive="tabActive" class="tab" title="Search and add movies">
         ＋
       </a>
     </li>
