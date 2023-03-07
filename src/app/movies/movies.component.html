@@ -1,0 +1,15 @@
+<nav>
+  <ul class="flex flex-wrap border-b border-gray-200">
+    <li class="mr-2">
+      <a [routerLink]="'list'" routerLinkActive="tabActive" class="tab">
+        Movies ({{ moviesCount$ | async }})
+      </a>
+    </li>
+    <li class="mr-2">
+      <a [routerLink]="'search'" routerLinkActive="tabActive" class="tab">
+        ＋
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

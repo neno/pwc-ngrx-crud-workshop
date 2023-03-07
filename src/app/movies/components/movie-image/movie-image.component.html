@@ -1,0 +1,10 @@
+<img
+  [src]="imageBaseUrl + src"
+  [alt]="alt"
+  class="h-full object-cover object-center"
+  sizes="(min-width: 1280px) 640px, (min-width: 768px) 50vw, 100vw"
+  [width]="640"
+  [height]="960"
+  loading="lazy"
+  (error)="imgFallback($event)"
+/>

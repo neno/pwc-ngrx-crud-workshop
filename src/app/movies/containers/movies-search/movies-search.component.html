@@ -1,0 +1,35 @@
+<form novalidate #f="ngForm" (ngSubmit)="onSearch()">
+  <ol class="w-full p-4 m-0 bg-gray-200 flex gap-4 items-center content">
+    <li class="flex-1">
+      <input
+        type="text"
+        placeholder="Search movies by title or year"
+        name="searchTerm"
+        [(ngModel)]="searchTerm"
+        class="p-2 flex w-full"
+        [defaultValue]="defaultSearchTerm$ | async"
+      />
+    </li>
+    <li class="flex-0">
+      <button class="flex-0 flex items-center gap-2 px-4 py-2 bg-primary text-white">
+        <span>Search</span>
+      </button>
+    </li>
+  </ol>
+</form>
+<ng-container *ngIf="searchResults$ | async as searchResults">
+  <ul
+    class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 my-0"
+  >
+    <li class="relative" *ngFor="let movie of searchResults">
+      <button (click)="addMovie(movie)" title="Add movie">
+        <app-movie-card>
+          <app-movie-image
+            [src]="movie.poster_path"
+            [alt]="movie.title"
+          ></app-movie-image>
+        </app-movie-card>
+      </button>
+    </li>
+  </ul>
+</ng-container>
