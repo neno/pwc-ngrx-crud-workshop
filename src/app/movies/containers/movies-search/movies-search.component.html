@@ -1,24 +1,38 @@
 <form novalidate #f="ngForm" (ngSubmit)="onSearch()">
-  <ol class="w-full p-4 m-0 bg-gray-200 flex gap-4 items-center content">
+  <ol class="w-full p-4 m-0 flex gap-4 items-center content">
     <li class="flex-1">
       <input
         type="text"
         placeholder="Search movies by title or year"
         name="searchTerm"
         [(ngModel)]="searchTerm"
-        class="p-2 flex w-full"
+        class="input input-bordered w-full input-lg"
         [defaultValue]="defaultSearchTerm$ | async"
       />
     </li>
     <li class="flex-0">
-      <button
-        class="flex-0 flex items-center gap-2 px-4 py-2 bg-primary text-white"
-      >
-        <span>Search</span>
+      <button class="btn btn-primary btn-lg gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-search"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        Search
       </button>
     </li>
   </ol>
 </form>
+<div class="divider"></div>
 <ng-container *ngIf="searchResults$ | async as searchResults">
   <ul
     class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 my-0"
@@ -28,13 +42,24 @@
         <app-movie-image
           [src]="movie.poster_path"
           [alt]="movie.title"
+          image
         ></app-movie-image>
-        <button
-          class="p-2 absolute bottom-0 right-0 bg-white"
-          title="Add to list"
-          (click)="addMovie(movie)"
-        >
-          ❤️
+        <button class="btn btn-primary" (click)="addMovie(movie)" actions>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-plus"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
         </button>
       </app-movie-card>
     </li>
