@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     MoviesListResolver
+  ],
+  exports: [
+    MoviesListComponent
   ]
 })
 export class MoviesListModule { }

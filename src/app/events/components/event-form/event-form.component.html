@@ -1,0 +1,76 @@
+<section class="flex flex-col gap-4">
+  <h2 class="h2">1. Plan Your Event</h2>
+  <div class="card bg-neutral">
+    <div class="card-body">
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="grid grid-cols-2 gap-4">
+          <ol class="flex flex-col justify-around">
+            <li class="form-control w-full">
+              <label class="label">
+                <span class="label-text">Title</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Give it a cool title"
+                class="input input-bordered w-full"
+                formControlName="title"
+              />
+            </li>
+            <li class="w-full">
+              <ol class="grid grid-cols-2 gap-4">
+                <li class="form-control w-full">
+                  <label class="label">
+                    <span class="label-text">Date</span>
+                  </label>
+                  <input
+                    type="date"
+                    placeholder="dd.mm.yyyy"
+                    class="input input-bordered w-full"
+                    formControlName="date"
+                  />
+                </li>
+                <li class="form-control w-full">
+                  <label class="label">
+                    <span class="label-text">Begins at</span>
+                  </label>
+                  <input
+                    type="time"
+                    placeholder="HH:MM"
+                    class="input input-bordered w-full"
+                    formControlName="beginsAt"
+                  />
+                </li>
+              </ol>
+            </li>
+            <li class="form-control w-full">
+              <label class="label">
+                <span class="label-text">Location</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter the address"
+                class="input input-bordered w-full"
+                formControlName="location"
+              />
+            </li>
+          </ol>
+          <ol class="flex flex-col gap-2 h-full">
+            <li class="form-control h-full">
+              <label class="label">
+                <span class="label-text">Description</span>
+              </label>
+              <textarea
+                class="textarea textarea-bordered h-full"
+                placeholder="Enter a nice description"
+                formControlName="description"
+              ></textarea>
+            </li>
+          </ol>
+        </div>
+        <div class="card-actions justify-end mt-4">
+          <button class="btn btn-primary">{{ event ? 'Update' : 'Create' }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

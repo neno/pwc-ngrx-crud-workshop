@@ -1,0 +1,17 @@
+<div class="divider"></div>
+<div class="flex flex-col gap-8">
+  <ng-container *ngIf="event$ | async as event">
+    <app-event-form [event]="event" (handleSubmit)="updateEvent($event)"></app-event-form>
+    <section class="flex flex-col gap-4">
+      <h2 class="h2">2. Assign Movies</h2>
+      <div class="card">
+        <app-movies-list [eventId]="event.id"></app-movies-list>
+      </div>
+      <!-- <div class="grid grid-cols-2 gap-8">
+        <div class="card">
+          <app-movies-list></app-movies-list>
+        </div>
+      </div> -->
+    </section>
+  </ng-container>
+</div>

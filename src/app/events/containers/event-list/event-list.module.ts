@@ -12,6 +12,6 @@ import { EventListComponent } from './event-list.component';
   imports: [
     CommonModule,
     EventListRoutingModule
-  ]
+  ],
 })
 export class EventListModule { }

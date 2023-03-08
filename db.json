@@ -80,7 +80,8 @@
       "title": "Knock at the Cabin",
       "video": false,
       "vote_average": 6.57,
-      "vote_count": 815
+      "vote_count": 815,
+      "eventId": "4a9d538b-1d7a-491e-aac3-a5a998f31124"
     },
     {
       "adult": false,
@@ -218,11 +219,7 @@
     {
       "adult": false,
       "backdrop_path": "/ew5FcYiRhTYNJAkxoVPMNlCOdVn.jpg",
-      "genre_ids": [
-        28,
-        80,
-        18
-      ],
+      "genre_ids": [28, 80, 18],
       "id": 272,
       "original_language": "en",
       "original_title": "Batman Begins",
@@ -238,12 +235,7 @@
     {
       "adult": false,
       "backdrop_path": "/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg",
-      "genre_ids": [
-        28,
-        12,
-        14,
-        878
-      ],
+      "genre_ids": [28, 12, 14, 878],
       "id": 19995,
       "original_language": "en",
       "original_title": "Avatar",
@@ -255,8 +247,305 @@
       "video": false,
       "vote_average": 7.566,
       "vote_count": 28552
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg",
+      "belongs_to_collection": null,
+      "budget": 90000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "https://www.bullettrainmovie.com",
+      "id": 718930,
+      "imdb_id": "tt12593682",
+      "original_language": "en",
+      "original_title": "Bullet Train",
+      "overview": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+      "popularity": 266.589,
+      "poster_path": "/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg",
+      "production_companies": [
+        {
+          "id": 121470,
+          "logo_path": "/zvJFu1C6gB80A98n6IGXBvMtgVl.png",
+          "name": "87North Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 5,
+          "logo_path": "/lieeAioEBVsgsoDT9HICrdt5iRa.png",
+          "name": "Columbia Pictures",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2022-07-03",
+      "revenue": 239268602,
+      "runtime": 126,
+      "spoken_languages": [
+        {
+          "english_name": "Japanese",
+          "iso_639_1": "ja",
+          "name": "日本語"
+        },
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Russian",
+          "iso_639_1": "ru",
+          "name": "Pусский"
+        },
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        }
+      ],
+      "status": "Released",
+      "tagline": "The end of the line is just the beginning.",
+      "title": "Bullet Train",
+      "video": false,
+      "vote_average": 7.495,
+      "vote_count": 3620
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fHFAfw5zS6ZkYx7lEyIuTM8d1zV.jpg",
+      "belongs_to_collection": null,
+      "budget": 16000000,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        }
+      ],
+      "homepage": "http://www.foxsearchlight.com/thedarjeelinglimited/",
+      "id": 4538,
+      "imdb_id": "tt0838221",
+      "original_language": "en",
+      "original_title": "The Darjeeling Limited",
+      "overview": "Three American brothers who have not spoken to each other in a year set off on a train voyage across India with a plan to find themselves and bond with each other -- to become brothers again like they used to be. Their \"spiritual quest\", however, veers rapidly off-course (due to events involving over-the-counter pain killers, Indian cough syrup, and pepper spray).",
+      "popularity": 12.516,
+      "poster_path": "/oSW5OVXTulaIXcoNwJAp5YEKpbP.jpg",
+      "production_companies": [
+        {
+          "id": 43,
+          "logo_path": "/4RgIPr55kBakgupWkzdDxqXJEqr.png",
+          "name": "Fox Searchlight Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 258,
+          "logo_path": null,
+          "name": "Scott Rudin Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 23449,
+          "logo_path": null,
+          "name": "American Empirical Pictures",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2007-09-07",
+      "revenue": 24377151,
+      "runtime": 92,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Hindi",
+          "iso_639_1": "hi",
+          "name": "हिन्दी"
+        },
+        {
+          "english_name": "German",
+          "iso_639_1": "de",
+          "name": "Deutsch"
+        },
+        {
+          "english_name": "Tibetan",
+          "iso_639_1": "bo",
+          "name": ""
+        }
+      ],
+      "status": "Released",
+      "tagline": "I want us to be brothers again, like we used to be.",
+      "title": "The Darjeeling Limited",
+      "video": false,
+      "vote_average": 7.165,
+      "vote_count": 3068
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2va32apQP97gvUxaMnL5wYt4CRB.jpg",
+      "belongs_to_collection": {
+        "id": 120794,
+        "name": "Batman Collection",
+        "poster_path": "/adQxUvQW8HXNsvMG5aj71pHh9T.jpg",
+        "backdrop_path": "/4UHZWw5lV3ZoadTjXuVOakdH32L.jpg"
+      },
+      "budget": 35000000,
+      "genres": [
+        {
+          "id": 14,
+          "name": "Fantasy"
+        },
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 80,
+          "name": "Crime"
+        }
+      ],
+      "homepage": "",
+      "id": 268,
+      "imdb_id": "tt0096895",
+      "original_language": "en",
+      "original_title": "Batman",
+      "overview": "Batman must face his most ruthless nemesis when a deformed madman calling himself \"The Joker\" seizes control of Gotham's criminal underworld.",
+      "popularity": 48.69,
+      "poster_path": "/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg",
+      "production_companies": [
+        {
+          "id": 4357,
+          "logo_path": null,
+          "name": "The Guber-Peters Company",
+          "origin_country": ""
+        },
+        {
+          "id": 174,
+          "logo_path": "/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png",
+          "name": "Warner Bros. Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 1382,
+          "logo_path": "/sOg7LGESPH5vCTOIdbMhLuypoLL.png",
+          "name": "PolyGram Filmed Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "1989-06-23",
+      "revenue": 411348924,
+      "runtime": 126,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Have you ever danced with the devil in the pale moonlight?",
+      "title": "Batman",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 6790
     }
   ],
-  "events": [],
-  "friends": []
+  "events": [
+    {
+      "id": "4a9d538b-1d7a-491e-aac3-a5a998f31124",
+      "title": "My New Event Neno",
+      "description": "Hioldrio",
+      "date": "2023-03-08",
+      "beginsAt": "20:00",
+      "location": "Bla",
+      "movies": [],
+      "guests": []
+    },
+    {
+      "id": "63b8273b-af14-4cd9-8913-77fa9c182473",
+      "title": "asdfsadfsdaf",
+      "description": "sadfasdfads",
+      "date": "2023-03-08",
+      "beginsAt": "23:00",
+      "location": "asdfasdfsadf",
+      "movies": [],
+      "guests": []
+    },
+    {
+      "id": "449c774b-62c9-4186-a0d3-10f808158d9e",
+      "title": "Hello",
+      "description": "sadflkasjdflöakj",
+      "date": "2023-03-09",
+      "beginsAt": "18:00",
+      "location": "lkasdflksjdaf",
+      "movies": [],
+      "guests": []
+    },
+    {
+      "id": "f4b46050-92ed-4524-9d74-2d97a8d4f8ac",
+      "title": "Neno event",
+      "description": "asdlfkajsdlfj",
+      "date": "2023-03-09",
+      "beginsAt": "22:00",
+      "location": "sdflkasdfl",
+      "movies": [],
+      "guests": []
+    }
+  ],
+  "friends": [],
+  "eventsWithMovies": [
+    {
+      "id": 1,
+      "movieId": 631842,
+      "eventId": "4a9d538b-1d7a-491e-aac3-a5a998f31124"
+    },
+    {
+      "id": 2,
+      "movieId": 505642,
+      "eventId": "4a9d538b-1d7a-491e-aac3-a5a998f31124"
+    }
+  ]
 }

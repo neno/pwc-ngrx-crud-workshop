@@ -27,7 +27,9 @@ export class MoviesSearchComponent implements OnInit {
     this.store.dispatch(SearchMovieActions.searchMovies({ searchTerm: this.searchTerm }));
   }
 
-  addMovie(movie: Movie) {
-    this.movieEntityService.add(movie);
+  getAndSaveMovie(id: number) {
+    this.store.dispatch(SearchMovieActions.fetchMovieById({ id }));
+    // this.movieEntityService.add(movie);
+    // this.movieEntityService.getByKey(id).subscribe(movie => console.log(movie));
   }
 }

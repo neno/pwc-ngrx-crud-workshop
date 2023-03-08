@@ -1,11 +1,10 @@
-export interface Event {
+export interface IEvent {
   id: string;
-  startsOn: Date;
-  endsOn: Date;
-  timeBegin: string;
-  timeEnd: string;
+  date: Date;
+  beginsAt: string;
   title: string;
   description: string;
   location: string;
-  visitors: string[];
+  movies: number[];
+  guests: string[];
 }

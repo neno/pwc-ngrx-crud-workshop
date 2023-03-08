@@ -16,4 +16,10 @@ export class MoviesSearchService {
       map((data: any) => data.results)
     );
   }
+
+  getMovieById(id: number): Observable<Movie> {
+    return this.http.get<Movie>(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=00f3f32198696caff437631c007a7548&query`
+    );
+  }
 }

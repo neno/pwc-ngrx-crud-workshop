@@ -18,4 +18,5 @@ export interface Movie {
   vote_average: number;
   vote_count: number;
   spoken_languages: Language[];
+  eventId?: string;
 }

@@ -28,6 +28,9 @@ import { MovieComponentsModule } from '../../components/movie-components.module'
   ],
   providers: [
     MoviesSearchService
+  ],
+  exports: [
+    MoviesSearchComponent
   ]
 })
 export class MoviesSearchModule { }

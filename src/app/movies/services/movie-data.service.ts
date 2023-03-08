@@ -19,4 +19,5 @@ export class MovieDataService extends DefaultDataService<Movie> {
   override delete(key: number | string): Observable<number | string> {
     return this.http.delete<number | string>(`/api/movies/${key}`);
   }
+
 }
