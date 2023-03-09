@@ -24,7 +24,6 @@ export class SearchMoviesEffects {
     ofType(SearchMovieActions.fetchMovieById),
     mergeMap(action => (
       this.moviesSearchService.getMovieById(action.id).pipe(
-        filter(movie => !!movie),
         tap((movie => this.movieEntityService.add(movie))),
       )
     ))

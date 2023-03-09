@@ -1,0 +1,80 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="">
+    <ol class="flex flex-col justify-around">
+      <li class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Name</span>
+        </label>
+        <input
+          type="text"
+          class="input input-bordered w-full"
+          formControlName="name"
+        />
+      </li>
+      <li class="w-full">
+        <ol class="grid grid-cols-2 gap-4">
+          <li class="form-control w-full">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input
+              type="email"
+              class="input input-bordered w-full"
+              formControlName="email"
+            />
+          </li>
+          <li class="form-control w-full">
+            <label class="label">
+              <span class="label-text">Phone</span>
+            </label>
+            <input
+              type="text"
+              class="input input-bordered w-full"
+              formControlName="phone"
+            />
+          </li>
+        </ol>
+      </li>
+      <!-- <li class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Address</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter the address"
+          class="input input-bordered w-full"
+          formControlName="address"
+        />
+      </li>
+      <li class="w-full">
+        <ol class="grid grid-cols-2 gap-4">
+          <li class="form-control w-full">
+            <label class="label">
+              <span class="label-text">zip</span>
+            </label>
+            <input
+              type="email"
+              placeholder="1234"
+              class="input input-bordered w-full"
+              formControlName="zip"
+            />
+          </li>
+          <li class="form-control w-full">
+            <label class="label">
+              <span class="label-text">City</span>
+            </label>
+            <input
+              type="text"
+              placeholder="1234567890"
+              class="input input-bordered w-full"
+              formControlName="city"
+            />
+          </li>
+        </ol>
+      </li> -->
+    </ol>
+  </div>
+  <div class="card-actions justify-end mt-4">
+    <button class="btn btn-primary">{{ contact ? 'Update' : 'Create' }}</button>
+  </div>
+</form>

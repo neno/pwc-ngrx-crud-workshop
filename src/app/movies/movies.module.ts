@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieEntityService } from './services/movie-entity.service';
 import { EntityDataService, EntityDefinitionService } from '@ngrx/data';
 import { MovieDataService } from './services/movie-data.service';
+import { MoviesResolver } from './services/movies.resolver';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MovieDataService } from './services/movie-data.service';
   ],
   providers: [
     MovieEntityService,
-    MovieDataService
+    MovieDataService,
+    MoviesResolver
   ]
 })
 export class MoviesModule {

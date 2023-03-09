@@ -1,0 +1,22 @@
+<div class="card w-full h-full bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h4 class="card-title">{{ contact.name }}</h4>
+    <ul class="flex flex-col gap-1">
+      <li>
+        <a class="hover:underline" [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      </li>
+      <li>
+        {{ contact.phone }}
+      </li>
+    </ul>
+    <div class="card-actions justify-end">
+      <button
+        class="btn btn-primary"
+        (click)="handleClick.emit(contact.id)"
+        actions
+      >
+        <ng-content></ng-content>
+      </button>
+    </div>
+  </div>
+</div>

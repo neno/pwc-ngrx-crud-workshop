@@ -1,15 +1,198 @@
-<div class="divider"></div>
 <div class="flex flex-col gap-8">
   <ng-container *ngIf="event$ | async as event">
-    <app-event-form [event]="event" (handleSubmit)="updateEvent($event)"></app-event-form>
+    <app-event-form
+      [event]="event"
+      (handleSubmit)="updateEvent($event)"
+    ></app-event-form>
+    <div class="divider"></div>
     <section class="flex flex-col gap-4">
       <h2 class="h2">2. Assign Movies</h2>
-      <div class="card">
-        <app-movies-list [eventId]="event.id"></app-movies-list>
-      </div>
+      <ng-container *ngIf="activeMovieTab$ | async as activeMovieTab">
+        <div class="tabs tabs-boxed">
+          <button
+            (click)="switchMovieTab('selected')"
+            [ngClass]="{ 'tab-active': activeMovieTab === 'selected' }"
+            class="tab"
+            title="List selected movies"
+          >
+            Show Selected Movies
+          </button>
+          <button
+            (click)="switchMovieTab('assign')"
+            [ngClass]="{ 'tab-active': activeMovieTab === 'assign' }"
+            class="tab"
+            title="Search and select new movies"
+          >
+            Search and select new movies
+          </button>
+        </div>
+
+        <div class="card">
+          <ng-container *ngIf="activeMovieTab === 'selected'">
+            <ng-container *ngIf="selectedMovies$ | async as selectedMovies">
+              <app-movie-card-list>
+                <li class="relative" *ngFor="let movie of selectedMovies">
+                  <app-movie-item
+                    [movie]="movie"
+                    (handleClick)="removeMovie($event, event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-trash-2"
+                    >
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path
+                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                      ></path>
+                      <line x1="10" y1="11" x2="10" y2="17"></line>
+                      <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                  </app-movie-item>
+                </li>
+              </app-movie-card-list>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="activeMovieTab === 'assign'">
+            <app-movies-search
+              (movieSelected)="addMovie($event, event)"
+            ></app-movies-search>
+          </ng-container>
+          <!-- <app-movies-list [eventId]="event.id"></app-movies-list> -->
+        </div>
+      </ng-container>
       <!-- <div class="grid grid-cols-2 gap-8">
         <div class="card">
           <app-movies-list></app-movies-list>
+        </div>
+      </div> -->
+    </section>
+    <div class="divider"></div>
+    <section class="flex flex-col gap-4">
+      <h2 class="h2">3. Invite Guests</h2>
+      <ng-container *ngIf="activeContactTab$ | async as activeContactTab">
+        <div class="tabs tabs-boxed">
+          <button
+            (click)="switchContactTab('selected')"
+            [ngClass]="{ 'tab-active': activeContactTab === 'selected' }"
+            class="tab"
+            title="List selected movies"
+          >
+            Invited Guests
+          </button>
+          <button
+            (click)="switchContactTab('assign')"
+            [ngClass]="{ 'tab-active': activeContactTab === 'assign' }"
+            class="tab"
+            title="Search and select new movies"
+          >
+            Select Guests
+          </button>
+        </div>
+
+        <div class="card">
+          <ng-container *ngIf="activeContactTab === 'selected'">
+            <ng-container *ngIf="selectedContacts$ | async as selectedContacts">
+              <ul
+                class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-8 my-0"
+              >
+                <li *ngFor="let contact of selectedContacts">
+                  <app-contact-card
+                    [contact]="contact"
+                    (handleClick)="removeContact(contact.id, event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-trash-2"
+                    >
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path
+                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                      ></path>
+                      <line x1="10" y1="11" x2="10" y2="17"></line>
+                      <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                  </app-contact-card>
+                </li>
+              </ul>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="activeContactTab === 'assign'">
+            <div class="grid grid-cols-4 gap-4">
+              <div class="col-span-3">
+                <ng-container
+                  *ngIf="unSelectedContacts$ | async as unSelectedContacts"
+                >
+                  <ul
+                    class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 my-0"
+                  >
+                    <li *ngFor="let contact of unSelectedContacts">
+                      <app-contact-card
+                        [contact]="contact"
+                        (handleClick)="addContact(contact.id, event)"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-plus"
+                        >
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </app-contact-card>
+                    </li>
+                  </ul>
+                </ng-container>
+              </div>
+              <section class="flex flex-col gap-4 card bg-neutral">
+                <div class="card-body">
+                  <h3 class="h3">Add new Contact</h3>
+                  <app-contact-form
+                    (handleSubmit)="createContantAndAddGuest($event, event)"
+                  ></app-contact-form>
+                </div>
+              </section>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+      <!-- <div class="card">
+        <div class="grid grid-cols-3">
+          <div class="col-span-2">
+            <section>
+              <h3 class="h3">Select existing contact</h3>
+            </section>
+          </div>
+          <section class="flex flex-col gap-4">
+            <h3 class="h3">Add new Contact</h3>
+            <div class="card bg-neutral">
+              <div class="card-body">
+                  <app-contact-form></app-contact-form>
+              </div>
+            </div>
+          </section>
         </div>
       </div> -->
     </section>

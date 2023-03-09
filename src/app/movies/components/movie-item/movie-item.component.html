@@ -1,0 +1,10 @@
+<app-movie-card>
+  <app-movie-image
+    [src]="movie.poster_path"
+    [alt]="movie.title"
+    image
+  ></app-movie-image>
+  <button class="btn btn-primary" (click)="handleClick.emit(movie.id)" actions>
+    <ng-content></ng-content>
+  </button>
+</app-movie-card>

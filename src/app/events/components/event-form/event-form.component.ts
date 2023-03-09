@@ -20,8 +20,6 @@ export class EventFormComponent implements OnInit {
       date: ['', Validators.required],
       beginsAt: ['', Validators.required],
       location: ['', Validators.required],
-      movies: [[]],
-      guests: [[]],
     });
   }
 
@@ -35,7 +33,7 @@ export class EventFormComponent implements OnInit {
     if (this.form.valid) {
       const newEvent: IEvent = {
         ...this.event ?? {},
-        ...this.form.value
+        ...this.form.value,
       };
       this.handleSubmit.emit(newEvent);
     }

@@ -37,6 +37,6 @@ export class EventsModule {
         }
       }
     });
-    this.entityDataService.registerService('Event', eventDataService);
+    this.entityDataService.registerService('Event', this.eventDataService);
   }
 }

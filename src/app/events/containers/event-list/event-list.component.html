@@ -1,1 +1,25 @@
-<p>event-list works!</p>
+<ng-container *ngIf="events$ | async as events">
+  <div class="overflow-x-auto">
+    <table class="table w-full">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th class="text-center">Movies</th>
+          <th class="text-center">Guests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{ event.date | date }}</td>
+          <td>
+            <a [routerLink]="['/', event.id]" class="text-bold hover:underline">{{ event.title }}</a>
+          </td>
+          <td class="text-center">{{ event?.movies?.length || 0 }}</td>
+          <td class="text-center">{{ event?.guests?.length || 0 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>

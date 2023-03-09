@@ -12,9 +12,10 @@ export class EventNewComponent {
 
   constructor(private eventEntityService: EventEntityService, private rouer: Router) { }
 
-  createEvent(event: IEvent) {
+  createEvent(e: IEvent) {
+    const event = { ...e, movies: [], guests: [] };
     this.eventEntityService.add(event).pipe(take(1)).subscribe(
-      (event) => this.rouer.navigate(['/events', event.id])
+      (event) => this.rouer.navigate(['/', event.id])
     );
   }
 }
