@@ -10,6 +10,7 @@ import { MoviesListModule } from 'src/app/movies/containers/movies-list/movies-l
 import { MovieComponentsModule } from 'src/app/movies/components/movie-components.module';
 import { ContactComponentsModule } from 'src/app/contacts/components/contact-components.module';
 import { ContactsModule } from 'src/app/contacts/contacts.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 
@@ -26,7 +27,8 @@ import { ContactsModule } from 'src/app/contacts/contacts.module';
     MoviesListModule,
     MovieComponentsModule,
     ContactsModule,
-    ContactComponentsModule
+    ContactComponentsModule,
+    ComponentsModule
   ],
 })
 export class EventEditModule { }

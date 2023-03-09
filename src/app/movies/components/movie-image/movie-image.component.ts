@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-image',
   templateUrl: './movie-image.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieImageComponent {
   @Input() src!: string;

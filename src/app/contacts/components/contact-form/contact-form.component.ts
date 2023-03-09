@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from '../../models/contact.model';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactFormComponent {
   @Input() contact?: Contact;
@@ -17,9 +18,6 @@ export class ContactFormComponent {
       name: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
-      // address: ['', Validators.required],
-      // city: ['', Validators.required],
-      // zip: ['', Validators.required],
     });
   }
 

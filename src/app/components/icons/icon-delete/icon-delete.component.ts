@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-card-list',
-  templateUrl: './movie-card-list.component.html',
+  selector: 'app-icon-delete',
+  templateUrl: './icon-delete.component.html',
 })
-export class MovieCardListComponent {
+export class IconDeleteComponent {
   constructor(private cd: ChangeDetectorRef){
     this.cd.detach();
   }

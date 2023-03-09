@@ -26,7 +26,6 @@
             Search and select new movies
           </button>
         </div>
-
         <div class="card">
           <ng-container *ngIf="activeMovieTab === 'selected'">
             <ng-container *ngIf="selectedMovies$ | async as selectedMovies">
@@ -36,25 +35,7 @@
                     [movie]="movie"
                     (handleClick)="removeMovie($event, event)"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-trash-2"
-                    >
-                      <polyline points="3 6 5 6 21 6"></polyline>
-                      <path
-                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                      ></path>
-                      <line x1="10" y1="11" x2="10" y2="17"></line>
-                      <line x1="14" y1="11" x2="14" y2="17"></line>
-                    </svg>
+                  <app-icon-delete></app-icon-delete>
                   </app-movie-item>
                 </li>
               </app-movie-card-list>
@@ -65,14 +46,8 @@
               (movieSelected)="addMovie($event, event)"
             ></app-movies-search>
           </ng-container>
-          <!-- <app-movies-list [eventId]="event.id"></app-movies-list> -->
         </div>
       </ng-container>
-      <!-- <div class="grid grid-cols-2 gap-8">
-        <div class="card">
-          <app-movies-list></app-movies-list>
-        </div>
-      </div> -->
     </section>
     <div class="divider"></div>
     <section class="flex flex-col gap-4">
@@ -96,71 +71,38 @@
             Select Guests
           </button>
         </div>
-
         <div class="card">
           <ng-container *ngIf="activeContactTab === 'selected'">
             <ng-container *ngIf="selectedContacts$ | async as selectedContacts">
               <ul
-                class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-8 my-0"
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-8 my-0"
               >
                 <li *ngFor="let contact of selectedContacts">
                   <app-contact-card
                     [contact]="contact"
                     (handleClick)="removeContact(contact.id, event)"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-trash-2"
-                    >
-                      <polyline points="3 6 5 6 21 6"></polyline>
-                      <path
-                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                      ></path>
-                      <line x1="10" y1="11" x2="10" y2="17"></line>
-                      <line x1="14" y1="11" x2="14" y2="17"></line>
-                    </svg>
+                    <app-icon-delete></app-icon-delete>
                   </app-contact-card>
                 </li>
               </ul>
             </ng-container>
           </ng-container>
           <ng-container *ngIf="activeContactTab === 'assign'">
-            <div class="grid grid-cols-4 gap-4">
-              <div class="col-span-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div class="md:col-span-2 lg:col-span-3">
                 <ng-container
                   *ngIf="unSelectedContacts$ | async as unSelectedContacts"
                 >
                   <ul
-                    class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 my-0"
+                    class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 my-0"
                   >
                     <li *ngFor="let contact of unSelectedContacts">
                       <app-contact-card
                         [contact]="contact"
                         (handleClick)="addContact(contact.id, event)"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-plus"
-                        >
-                          <line x1="12" y1="5" x2="12" y2="19"></line>
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
+                        <app-icon-add></app-icon-add>
                       </app-contact-card>
                     </li>
                   </ul>
@@ -178,23 +120,6 @@
           </ng-container>
         </div>
       </ng-container>
-      <!-- <div class="card">
-        <div class="grid grid-cols-3">
-          <div class="col-span-2">
-            <section>
-              <h3 class="h3">Select existing contact</h3>
-            </section>
-          </div>
-          <section class="flex flex-col gap-4">
-            <h3 class="h3">Add new Contact</h3>
-            <div class="card bg-neutral">
-              <div class="card-body">
-                  <app-contact-form></app-contact-form>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div> -->
     </section>
   </ng-container>
 </div>

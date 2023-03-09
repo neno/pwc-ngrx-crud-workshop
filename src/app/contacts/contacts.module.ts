@@ -5,6 +5,7 @@ import { ContactEntityService } from './services/contact-entity.service';
 import { ContactDataService } from './services/contact-data.service';
 import { EntityDataService, EntityDefinitionService } from '@ngrx/data';
 import { ContactsResolver } from './services/contacts.resolver';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -12,7 +13,8 @@ import { ContactsResolver } from './services/contacts.resolver';
   declarations: [],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   providers: [
     ContactEntityService,
